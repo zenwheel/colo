@@ -1,0 +1,34 @@
+
+Thank you for trying colo,
+
+here's what you need to do to use it:
+
+edit colo.c and change these lines:
+
+#define XTERM "/usr/X11R6/bin/xterm"
+#define DEFAULT_COLORC "/usr/local/lib/colorc"
+
+the first should be set to wherever xterm is on your system (you can find this
+by typing 'which xterm' at your prompt)
+
+the next should be set to the path to a file to use for a default color file
+when no other is found.. (it searches for a .colorc in your home directory)
+
+then compile colo with something like:
+  cc -o colo colo.c
+or
+  gcc -o colo colo.c
+
+after that, you should set up a .colorc in your home directory, a way to start
+is probably copy the colorc included in this archive, and edit it to your
+liking..
+
+colors are picked from any line in the file except the first one, and the lines
+contain
+
+foreground-color,background-color,(cursor-color)
+
+where cursor-color can be omitid if you just want it to be the same as
+foreground-color
+
+enjoy! 
